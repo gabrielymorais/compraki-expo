@@ -72,6 +72,6 @@ npx expo start
 - Não possui backend (mercados exibidos são mockados)
 - Navegação e formulários estão ativos
 
-##👩‍💻 Desenvolvedoras
+## 👩‍💻 Desenvolvedoras
 Amanda Morais e Gabriely Morais
 
