@@ -1,0 +1,77 @@
+# 🛒 Compraki
+
+Aplicativo mobile feito com **Expo (React Native)** para facilitar o delivery em mercados locais.  
+Com ele, usuários podem se cadastrar, visualizar mercados próximos, e simular suas compras de forma rápida e intuitiva.
+
+> 💡 Projeto fictício criado para fins de aprendizado e portfólio.
+
+---
+
+## 📱 Funcionalidades
+
+- Tela de boas-vindas e onboarding
+- Escolha de perfil: cliente ou mercado
+- Cadastro e login de cliente
+- Navegação por abas (Home e Perfil)
+- Exibição de mercados disponíveis (mockados)
+- Tela de perfil com opção de logout
+
+---
+
+## 🖼️ Telas implementadas
+
+- `IntroScreen`: tela de introdução com botão “Vamos começar”
+- `SelectProfileScreen`: escolha entre Cliente e Mercado
+- `LoginScreen`: login de cliente
+- `SignupScreen`: cadastro de cliente
+- `HomeScreen`: listagem de mercados e recomendados
+- `PerfilScreen`: informações do usuário e botão sair
+
+---
+
+## 🚀 Tecnologias utilizadas
+
+- [React Native](https://reactnative.dev/)
+- [Expo](https://expo.dev/)
+- [Expo Router](https://expo.github.io/router/)
+- [React Navigation](https://reactnavigation.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [FontAwesome Icons](https://fontawesome.com/)
+
+---
+
+## ⚙️ Como rodar o projeto localmente
+
+### 🔧 Pré-requisitos
+
+- Node.js 20 ou superior
+- Expo CLI instalado globalmente:
+- Celular com o app Expo Go instalado (Play Store / App Store)
+```bash
+npm install -g expo-cli
+```
+## 📦 Instalação
+- Clone o repositório e entre nele:
+
+```bash
+git clone https://github.com/gabrielymorais/compraki-expo.git
+```
+```bash
+cd compraki-expo
+```
+
+## ▶️ Rodar o app
+- Inicie o servidor:
+```bash
+npx expo start
+```
+- Abra o app Expo Go no celular e escaneie o QR Code gerado no terminal ou navegador.
+
+## 🧪 Testar a aplicação
+- O app funciona completamente via Expo Go
+- Não possui backend (mercados exibidos são mockados)
+- Navegação e formulários estão ativos
+
+##👩‍💻 Desenvolvedoras
+Amanda Morais e Gabriely Morais
+
