@@ -1,7 +1,7 @@
 import { View, Text, Image, FlatList, ScrollView, TextInput } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import { Stack } from 'expo-router';
-import styles from './../styles/homeStyles'; 
+import styles from './../styles/homeStyles';
 
 const mercados = [
   { id: '1', nome: 'Walmart', imagem: require('../../assets/images/walmart.jpg') },
@@ -13,11 +13,19 @@ const mercados = [
 ];
 
 export default function HomeScreen() {
+  const horaAtual = new Date().getHours();
+
+  const saudacao = () => {
+    if (horaAtual >= 5 && horaAtual < 12) return 'Bom dia ☀️';
+    if (horaAtual >= 12 && horaAtual < 18) return 'Boa tarde 🌤️';
+    return 'Boa noite 🌙';
+  };
+
   return (
     <>
       <Stack.Screen
         options={{
-          headerShown: false, 
+          headerShown: false,
         }}
       />
 
@@ -33,7 +41,9 @@ export default function HomeScreen() {
           <FontAwesome name="bell-o" size={24} color="#FF9900" />
         </View>
 
-        <Text style={styles.greeting}>Hoje é um ótimo dia pra pedir algo fresquinho 🥦🍞</Text>
+        <Text style={styles.greeting}>
+          {saudacao()}, é um ótimo momento pra pedir algo fresquinho.
+        </Text>
 
         <TextInput
           placeholder="Buscar mercados..."
