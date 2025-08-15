@@ -28,6 +28,17 @@ Com ele, usuários podem se cadastrar, visualizar mercados próximos, e simular 
 - `PerfilScreen`: informações do usuário e botão sair
 
 ---
+## 👋 Funcionalidade de Saudação com Renderização Condicional
+
+Implementamos uma funcionalidade que exibe uma **mensagem de saudação dinâmica** na tela inicial com base no horário atual do dispositivo.
+
+### 🧠 Lógica
+
+A saudação é exibida automaticamente conforme o período do dia, utilizando a hora local para determinar qual texto mostrar:
+
+- **Bom dia ☀️** → Entre 05h e 11h59  
+- **Boa tarde 🌤️** → Entre 12h e 17h59  
+- **Boa noite 🌙** → Entre 18h e 04h59
 
 ## 🚀 Tecnologias utilizadas
 
