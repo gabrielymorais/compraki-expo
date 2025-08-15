@@ -40,6 +40,20 @@ A saudação é exibida automaticamente conforme o período do dia, utilizando a
 - **Boa tarde 🌤️** → Entre 12h e 17h59  
 - **Boa noite 🌙** → Entre 18h e 04h59
 
+## ⚠️ Renderização Condicional para Lista Vazia
+
+Adicionamos uma funcionalidade que melhora a experiência do usuário ao exibir uma mensagem informativa sempre que a lista de mercados estiver vazia, tanto para os mercados disponíveis quanto para os mercados recentemente acessados.
+
+### 🔍 Comportamento
+
+Se **nenhum mercado estiver disponível**, é exibido o seguinte texto no lugar da lista correspondente:
+
+- **Para a seção "Mercados disponíveis para você"**:  
+  `Nenhum mercado disponível no momento. Tente novamente mais tarde.`
+
+- **Para a seção "Mercados que você comprou recentemente"**:  
+  `Você ainda não comprou em nenhum mercado. Vamos começar? 🛒`
+
 ## 🚀 Tecnologias utilizadas
 
 - [React Native](https://reactnative.dev/)
