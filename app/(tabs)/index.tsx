@@ -57,28 +57,40 @@ export default function HomeScreen() {
         />
 
         <Text style={styles.sectionTitle}>Mercados disponíveis para você</Text>
-        <FlatList
-          data={mercados}
-          keyExtractor={(item) => item.id}
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          contentContainerStyle={styles.cardList}
-          renderItem={({ item }) => (
-            <Image source={item.imagem} style={styles.card} />
-          )}
-        />
+        {mercados.length === 0 ? (
+          <Text style={styles.emptyText}>
+            Nenhum mercado disponível no momento. Tente novamente mais tarde.
+          </Text>
+        ) : (
+          <FlatList
+            data={mercados}
+            keyExtractor={(item) => item.id}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={styles.cardList}
+            renderItem={({ item }) => (
+              <Image source={item.imagem} style={styles.card} />
+            )}
+          />
+        )}
 
         <Text style={styles.sectionTitle}>Mercados que você comprou recentemente</Text>
-        <FlatList
-          data={mercados}
-          keyExtractor={(item) => 'r' + item.id}
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          contentContainerStyle={styles.cardList}
-          renderItem={({ item }) => (
-            <Image source={item.imagem} style={styles.card} />
-          )}
-        />
+        {mercados.length === 0 ? (
+          <Text style={styles.emptyText}>
+            Você ainda não comprou em nenhum mercado. Vamos começar? 🛒
+          </Text>
+        ) : (
+          <FlatList
+            data={mercados}
+            keyExtractor={(item) => 'r' + item.id}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={styles.cardList}
+            renderItem={({ item }) => (
+              <Image source={item.imagem} style={styles.card} />
+            )}
+          />
+        )}
       </ScrollView>
     </>
   );

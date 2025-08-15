@@ -61,6 +61,13 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     marginRight: 10,
   },
+  emptyText: {
+  textAlign: 'center',
+  color: '#999',
+  fontSize: 15,
+  marginTop: 10,
+},
+
 });
 
 export default styles;
