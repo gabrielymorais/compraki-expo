@@ -4,6 +4,10 @@ import { Stack } from 'expo-router';
 import { useState, useEffect } from 'react';
 import styles from './../styles/homeStyles';
 
+// 🔥 Firebase Firestore
+import { collection, addDoc } from 'firebase/firestore';
+import { db } from '../../services/firebase/config';
+
 const mercadosBase = [
   { id: '1', nome: 'Walmart', imagem: require('../../assets/images/walmart.jpg') },
   { id: '2', nome: 'Mercantil', imagem: require('../../assets/images/mercado-1.jpg') },
@@ -39,6 +43,19 @@ export default function HomeScreen() {
     setFavoritos((prev) =>
       prev.includes(id) ? prev.filter((fav) => fav !== id) : [...prev, id]
     );
+  };
+
+  // 🧪 Função de teste para Firestore
+  const enviarTesteParaFirestore = async () => {
+    try {
+      const docRef = await addDoc(collection(db, 'testes'), {
+        nome: 'Primeiro Teste',
+        criadoEm: new Date(),
+      });
+      alert(`✅ Documento salvo com ID: ${docRef.id}`);
+    } catch (e) {
+      alert('❌ Erro ao salvar no Firestore: ' + (e as Error).message);
+    }
   };
 
   return (
@@ -105,6 +122,22 @@ export default function HomeScreen() {
             )}
           />
         )}
+
+        {/* 🔘 Botão de teste Firestore */}
+        <TouchableOpacity
+          onPress={enviarTesteParaFirestore}
+          style={{
+            backgroundColor: '#FF9900',
+            padding: 12,
+            borderRadius: 8,
+            marginTop: 30,
+            marginBottom: 60,
+          }}
+        >
+          <Text style={{ color: '#fff', textAlign: 'center', fontWeight: 'bold' }}>
+            Enviar teste pro Firestore
+          </Text>
+        </TouchableOpacity>
       </ScrollView>
     </>
   );
